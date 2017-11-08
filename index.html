@@ -12,6 +12,19 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 <script>
 var c = document.getElementById("MyCanvas");
 var ctx = c.getContext("2d");
+
+/*simple gradient*/
+// Create gradient
+var grd = ctx.createLinearGradient(0,0,400,0);
+grd.addColorStop(0,"white");
+grd.addColorStop(0.25,"purple");
+grd.addColorStop(0.5,"red");
+grd.addColorStop(0.75,"purple");
+grd.addColorStop(1,"white");
+// Fill with gradient
+ctx.fillStyle= grd;
+ctx.fillRect(0,0,400,200);
+
 /*line
 ctx.moveTo(0,0);
 ctx.lineTo(200,100);
@@ -21,30 +34,28 @@ ctx.lineTo(0,100);
 ctx.stroke();
 */
 
-/*circle
-ctx.beginPath();
-ctx.arc(50, 50, 25, 0, 2 * Math.PI);
-ctx.stroke();
-*/
-
-/*text 
+/*text*/ 
 ctx.font = "30px Comic Sans MS, Arial";
-ctx.fillText("SJNMA Soccer",10,50);
-*/
+ctx.fillStyle = 'black';
+ctx.fillText("SJNMA Soccer",100,40);
 
-/*outlined text
-ctx.font= "30px Arial";
-ctx.strokeText("SJNMA Soccer",10,50);
-*/
+/*outlined text*/
+ctx.font= "30px Comic Sans MS";
+ctx.strokeText("SJNMA Soccer",100,40);
 
-/*simple gradient
-// Create gradient
-var grd = ctx.createLinearGradient(0,0,200,0);
-grd.addColorStop(0,"blue");
-// Fill with gradient
-ctx.fillStyle= grd;
-ctx.fillRect(10,10,150,80,);
-*/
+/*circle*/
+ctx.beginPath();
+ctx.arc(200, 120, 60, 0, 2 * Math.PI);
+ctx.fillStyle = 'purple';
+ctx.fill();
+ctx.lineWidth = 5;
+ctx.strokeStyle = '#b000b5';
+ctx.stroke();
+
+/*text*/
+ctx.font = "60px Comic Sans MS";
+ctx.fillStyle = 'red';
+ctx.fillText("17", 170,140);
 
 </script>
 </body>
